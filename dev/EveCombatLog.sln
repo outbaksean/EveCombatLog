@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{C3B70F44-2A9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EveCombatLogModel", "EveCombatLogModel\EveCombatLogModel.csproj", "{14519987-7E51-4AEE-B327-1A46B1A898B9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBHelper_InMemory", "DBHelper_InMemory\DBHelper_InMemory.csproj", "{D2131B31-C771-4D62-B73E-091B1180CAD3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{14519987-7E51-4AEE-B327-1A46B1A898B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14519987-7E51-4AEE-B327-1A46B1A898B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14519987-7E51-4AEE-B327-1A46B1A898B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2131B31-C771-4D62-B73E-091B1180CAD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2131B31-C771-4D62-B73E-091B1180CAD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2131B31-C771-4D62-B73E-091B1180CAD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2131B31-C771-4D62-B73E-091B1180CAD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +47,7 @@ Global
 		{CF87E011-90E1-4437-9D70-673779D8D8D1} = {C3B70F44-2A92-44CC-83C7-699ED094C30A}
 		{4D766AEC-0340-4AE0-9CD7-2D439908CE60} = {66A58029-B42C-4109-9C70-B621AF9F6B32}
 		{14519987-7E51-4AEE-B327-1A46B1A898B9} = {7ED68532-DF05-457E-A7FB-AA8195250056}
+		{D2131B31-C771-4D62-B73E-091B1180CAD3} = {7ED68532-DF05-457E-A7FB-AA8195250056}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3C72ECCA-57C6-496F-9085-DB2A247BAB35}
