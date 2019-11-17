@@ -1,4 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+//using EveCombatLogAPILibrary;
+using EveCombatLogModel;
 
 namespace EveCombatLogTest
 {
@@ -6,7 +8,7 @@ namespace EveCombatLogTest
     public class APITest
     {
         [TestMethod]
-        public void GetAllFittings()
+        public void GetAllFittings_DummyFitName()
         {
             //Arrange
             var api = new EveCombatLogAPILibrary.API();
@@ -15,7 +17,9 @@ namespace EveCombatLogTest
             var fittings = api.GetAllFittings();
 
             //Assert
-            Assert.AreEqual("All Fittings".ToUpperInvariant(), fittings.ToUpperInvariant());
+            var firstFitting = fittings[0];
+
+            Assert.AreEqual("Dummy".ToUpperInvariant(), firstFitting.Name.ToUpperInvariant());
         }
     }
 }

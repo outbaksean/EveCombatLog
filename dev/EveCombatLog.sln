@@ -5,7 +5,15 @@ VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EveCombatLogAPILibrary", "EveCombatLogAPILibrary\EveCombatLogAPILibrary.csproj", "{CF87E011-90E1-4437-9D70-673779D8D8D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EveCombatLogTest", "EveCombatLogTest\EveCombatLogTest.csproj", "{4D766AEC-0340-4AE0-9CD7-2D439908CE60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EveCombatLogTest", "EveCombatLogTest\EveCombatLogTest.csproj", "{4D766AEC-0340-4AE0-9CD7-2D439908CE60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{7ED68532-DF05-457E-A7FB-AA8195250056}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{66A58029-B42C-4109-9C70-B621AF9F6B32}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{C3B70F44-2A92-44CC-83C7-699ED094C30A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EveCombatLogModel", "EveCombatLogModel\EveCombatLogModel.csproj", "{14519987-7E51-4AEE-B327-1A46B1A898B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +29,18 @@ Global
 		{4D766AEC-0340-4AE0-9CD7-2D439908CE60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D766AEC-0340-4AE0-9CD7-2D439908CE60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D766AEC-0340-4AE0-9CD7-2D439908CE60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14519987-7E51-4AEE-B327-1A46B1A898B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14519987-7E51-4AEE-B327-1A46B1A898B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14519987-7E51-4AEE-B327-1A46B1A898B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14519987-7E51-4AEE-B327-1A46B1A898B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CF87E011-90E1-4437-9D70-673779D8D8D1} = {C3B70F44-2A92-44CC-83C7-699ED094C30A}
+		{4D766AEC-0340-4AE0-9CD7-2D439908CE60} = {66A58029-B42C-4109-9C70-B621AF9F6B32}
+		{14519987-7E51-4AEE-B327-1A46B1A898B9} = {7ED68532-DF05-457E-A7FB-AA8195250056}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3C72ECCA-57C6-496F-9085-DB2A247BAB35}
