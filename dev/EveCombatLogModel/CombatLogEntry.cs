@@ -4,7 +4,8 @@ using System.Text;
 
 namespace EveCombatLogModel
 {
-    class CombatLogEntry
+    public class CombatLogEntry
     {
+        public string Name { get; set; }
     }
 }
