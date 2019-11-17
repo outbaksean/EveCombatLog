@@ -9,5 +9,10 @@ namespace EveCombatLogAPILibrary
         {
             return "All Fittings";
         }
+
+        public void CreateFitting(string fittingName)
+        {
+            //TODO
+        }
     }
 }
