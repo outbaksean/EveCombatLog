@@ -6,6 +6,7 @@ namespace EveCombatLogModel
 {
     public interface IDBHelper
     {
+
         public void CreateFitting(Fitting fitting);
 
         public List<Fitting> GetAllFittings();

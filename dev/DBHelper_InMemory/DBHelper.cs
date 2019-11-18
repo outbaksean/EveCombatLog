@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using EveCombatLogModel;
 
 namespace DBHelper_InMemory
@@ -8,15 +9,17 @@ namespace DBHelper_InMemory
     {
 
         private Dictionary<string, Fitting> _fittings;
+        private Dictionary<string, CombatLogEntry> _combatLogEntries;
 
         public void CreateCombatLogEntry(string fittingName, CombatLogEntry combatLogEntry)
         {
-            throw new NotImplementedException();
+            Fitting fitting = _fittings[fittingName];
+            fitting.CombatLogEntries.Add(combatLogEntry);
         }
 
         public void CreateFitting(Fitting fitting)
         {
-            throw new NotImplementedException();
+            _fittings.Add(fitting.Name, fitting);
         }
 
         public void DeleteCombatLogEntry(string combatLogEntryName)
@@ -26,27 +29,28 @@ namespace DBHelper_InMemory
 
         public void DeleteFitting(string fittingName)
         {
-            throw new NotImplementedException();
+            _fittings.Remove(fittingName);
         }
 
         public List<Fitting> GetAllFittings()
         {
-            throw new NotImplementedException();
+            return _fittings.Values.ToList();
         }
 
         public List<CombatLogEntry> GetCombatLogEntries(string fittingName)
         {
-            throw new NotImplementedException();
+            Fitting fitting = _fittings[fittingName];
+            return fitting.CombatLogEntries;
         }
 
         public CombatLogEntry GetCombatLogEntry(string combatLogEntryName)
         {
-            throw new NotImplementedException();
+            return _combatLogEntries[combatLogEntryName];
         }
 
         public Fitting GetFitting(string fittingName)
         {
-            throw new NotImplementedException();
+            return _fittings[fittingName];
         }
 
         public void UpdateCombatLogEntry(string combatLogEntryName, CombatLogEntry combatLogEntry)
@@ -56,7 +60,11 @@ namespace DBHelper_InMemory
 
         public void UpdateFitting(string fittingName, Fitting fitting)
         {
-            throw new NotImplementedException();
+            if (_fittings.ContainsKey(fittingName))
+            {
+                _fittings[fittingName] = fitting;
+            }
+
         }
     }
 }
