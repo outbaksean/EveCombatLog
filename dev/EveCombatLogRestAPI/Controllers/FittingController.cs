@@ -17,45 +17,50 @@ namespace EveCombatLogRestAPI.Controllers
         public FittingController(IDBHelper db)
         {
             _db = db;
-            //_db.Init();
         }
 
         // GET: api/Fitting
         [HttpGet]
         public IEnumerable<Fitting> Get()
         {
-            //return new string[] { "value1", "value2" };
             return _db.GetAllFittings();
         }
 
-        // GET: api/Fitting/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(string id)
+        // GET: api/Fitting/MyFitting
+        [HttpGet("{fittingName}", Name = "Get")]
+        public Fitting Get(string fittingName)
         {
-            return _db.GetFitting(id).ToString();
+            return _db.GetFitting(fittingName);
         }
 
         // POST: api/Fitting
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Fitting fitting)
         {
-            var insert = new Fitting
-            {
-                Name = value
-            };
-            _db.CreateFitting(insert);
+            //var combatLogEntry1 = new CombatLogEntry();
+            //combatLogEntry1.Name = "C1";
+
+            //var combatLogEntry2 = new CombatLogEntry();
+            //combatLogEntry2.Name = "C2";
+
+            //fitting.CombatLogEntries.Add(combatLogEntry1);
+            //fitting.CombatLogEntries.Add(combatLogEntry2);
+
+            _db.CreateFitting(fitting);
         }
 
-        // PUT: api/Fitting/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        // PUT: api/Fitting/MyFitting
+        [HttpPut("{fittingName}")]
+        public void Put(string fittingName, [FromBody] Fitting modifiedFitting)
         {
+            _db.UpdateFitting(fittingName, modifiedFitting);
         }
 
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        // DELETE: api/MyFitting/5
+        [HttpDelete("{fittingName}")]
+        public void Delete(string fittingName)
         {
+            _db.DeleteFitting(fittingName);
         }
     }
 }
