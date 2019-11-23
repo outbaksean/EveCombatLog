@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DBHelper_InMemory\DBHelper_InMemory.csproj" />
     <ProjectReference Include="..\EveCombatLogAPILibrary\EveCombatLogAPILibrary.csproj" />
     <ProjectReference Include="..\EveCombatLogModel\EveCombatLogModel.csproj" />
   </ItemGroup>

@@ -9,7 +9,7 @@ namespace DBHelper_InMemory
     {
 
         private Dictionary<string, Fitting> _fittings;
-        private Dictionary<string, CombatLogEntry> _combatLogEntries;
+        //private Dictionary<string, CombatLogEntry> _combatLogEntries;
 
         public void CreateCombatLogEntry(string fittingName, CombatLogEntry combatLogEntry)
         {
@@ -24,7 +24,23 @@ namespace DBHelper_InMemory
 
         public void DeleteCombatLogEntry(string combatLogEntryName)
         {
-            throw new NotImplementedException();
+            var query = from Fitting fitting in _fittings.Values
+                        from CombatLogEntry combatLogEntry in fitting.CombatLogEntries
+                        where combatLogEntry.Name == combatLogEntryName
+                        select fitting;
+            var fittingContainer = query.First<Fitting>();
+            CombatLogEntry toDelete = null;
+            foreach (CombatLogEntry combatLogEntry in fittingContainer.CombatLogEntries)
+            {
+                if (combatLogEntry.Name == combatLogEntryName)
+                {
+                    toDelete = combatLogEntry;
+                }
+            }
+            if (!(toDelete == null))
+            {
+                fittingContainer.CombatLogEntries.Remove(toDelete);
+            }
         }
 
         public void DeleteFitting(string fittingName)
@@ -45,12 +61,28 @@ namespace DBHelper_InMemory
 
         public CombatLogEntry GetCombatLogEntry(string combatLogEntryName)
         {
-            return _combatLogEntries[combatLogEntryName];
+            var query = from Fitting fitting in _fittings.Values
+                        from CombatLogEntry combatLogEntry in fitting.CombatLogEntries
+                        where combatLogEntry.Name == combatLogEntryName
+                        select combatLogEntry;
+            return query.First<CombatLogEntry>();
+            //if (query.Count() > 0)
+            //{
+            //    return query.First<CombatLogEntry>();
+            //} else
+            //{
+            //    return null;
+            //}
         }
 
         public Fitting GetFitting(string fittingName)
         {
             return _fittings[fittingName];
+        }
+
+        public void Init()
+        {
+            _fittings = new Dictionary<string, Fitting>();
         }
 
         public void UpdateCombatLogEntry(string combatLogEntryName, CombatLogEntry combatLogEntry)
