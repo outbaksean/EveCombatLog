@@ -1,0 +1,3 @@
+export class Config {
+    public GetFittingsURL: string = "https://localhost/api/Fitting";
+}

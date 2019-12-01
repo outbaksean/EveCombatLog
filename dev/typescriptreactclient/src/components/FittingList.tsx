@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as FittingClass from "../Model/Fitting";
-import { checkPropTypes } from "prop-types";
+import * as APIHelper from "../API/APIHelper"
 
 interface FittingProps { 
     fitting: FittingClass.Fitting,
@@ -18,15 +18,21 @@ function Fitting(props: FittingProps) {
     );
 }
 
-export class FittingsList extends React.Component<FittingsProps> {
+export class FittingsList extends React.Component<FittingsProps, FittingsProps> {
     constructor(props: FittingsProps) {
         super(props);
-        // this.setState({ fittings: props.fittings })
+       
+        this.state = { fittings: [] }
+        APIHelper.GetFitting().then((f) => {
+            console.log("Component Constructor: " + f)
+            this.setState({ fittings: f});
+        })
     }
 
     fittingOnclick() {
         alert('you clicked a fitting');
     }
+
     renderFitting(fitting: FittingClass.Fitting) {
         return <Fitting
             fitting = {fitting}
@@ -38,7 +44,7 @@ export class FittingsList extends React.Component<FittingsProps> {
         return (
             <div>
                 <ul>
-                    {this.props.fittings.map((value) =>
+                    {this.state.fittings.map((value) =>
                         { return this.renderFitting(value) })
                     }
                 </ul>

@@ -330,3 +330,7 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+
+# Project Specific
+dev/typescriptreactclient/src/Config.ts
+dev/typescriptreactclient/.vscode/
