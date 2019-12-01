@@ -21,6 +21,7 @@ namespace EveCombatLogRestAPI.Controllers
 
         // GET: api/Fitting
         [HttpGet]
+        //[Microsoft.AspNetCore.Cors.EnableCors]
         public IEnumerable<Fitting> Get()
         {
             return _db.GetAllFittings();
